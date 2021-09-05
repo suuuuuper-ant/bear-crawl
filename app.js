@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 
-const env = process.env.NODE_ENV || 'develop';
+const env = process.env.NODE_ENV || 'local';
 if (!env) {
   console.log(`NODE_ENV is ${env}`);
   console.log('SET NODE_EV!!! development or test or production');
