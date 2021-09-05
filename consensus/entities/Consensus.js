@@ -1,6 +1,6 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
 
-const dbConfig = require('../../../config/dbconfig.json')['development']
+const dbConfig = require('../../config/dbConfig.json')['development']
 const sequelize = new Sequelize(dbConfig)
 
 const Consensus = sequelize.define('consensus', {

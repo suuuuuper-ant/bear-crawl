@@ -4,7 +4,7 @@ const Cheerio = cheerio.Cheerio;
 // const puppeteerCore = require('puppeteer-core/lib/cjs/puppeteer/node-puppeteer-core');
 const puppeteerCore = require('puppeteer-core');
 const dayjs = require('dayjs');
-// const {Consensus} = require('../entities/Consensus');
+const {Consensus} = require('../entities/Consensus');
 
 exports.CrawlConsensus = async () => {
 
@@ -79,7 +79,7 @@ exports.CrawlConsensus = async () => {
   })
 
 
-  // await Consensus.bulkCreate(result)
+  await Consensus.bulkCreate(result)
   await browser.close();
 
 }
