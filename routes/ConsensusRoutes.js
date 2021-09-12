@@ -4,7 +4,7 @@ const consensusController = require('../consensus/controllers/ConsensusControlle
 
 module.exports = (router) => {
 
-  router.route('/')
+  router.route('/consensus')
     .get(consensusController.crawl);
 
 
