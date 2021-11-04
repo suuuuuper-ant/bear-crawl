@@ -4,6 +4,7 @@
 name: cron-news
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '00 */3 * * *'
 
