@@ -26,13 +26,8 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - name: Watermelon HTTP client
-        # You may pin to the exact commit or the version.
-        # uses: CamiloGarciaLaRotta/watermelon-http-client@054c532cb02e9bd533ba3579cf03f8c332061713
-        uses: CamiloGarciaLaRotta/watermelon-http-client@v1.5
+      - name: Fetch API Data 📦
+        uses: JamesIves/fetch-api-data-action@releases/v1
         with:
-          # Endpoint to query
-          # optional, default is https://api.github.com
-          url: 3.35.143.195:3000/api/news
-          # HTTP method
-          method: get
+          ENDPOINT: 3.35.143.195:3000/api/news
+          CONFIGURATION: '{ "method": "GET" }'
