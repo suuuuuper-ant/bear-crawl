@@ -23,6 +23,8 @@ jobs:
           # Edit the following line to install packages required to run your script.
           required-packages: axios
           script: |
+            const axios = require('axios')
+
             (() => {
               console.log('fetch start')
               axios('http://3.35.143.195:3000/api/news')
