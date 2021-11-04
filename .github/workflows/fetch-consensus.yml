@@ -1,9 +1,9 @@
-name: cron-fetch-news
+name: cron-fetch-consensus
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '00 */3 * * *'
+    - cron: '00 00 * * *'
 
 jobs:
   cron:
