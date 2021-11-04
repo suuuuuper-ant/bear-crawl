@@ -16,6 +16,7 @@ exports.CrawlConsensus = async () => {
         executablePath: '/Applications/Chromium.app/Contents/MacOS/Chromium',
       } :
       {
+        executablePath: '/home/ubuntu/bear-crawl/node_modules/puppeteer/.local-chromium/linux-901912/chrome-linux',
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
       }
   const browser = await puppeteerCore.launch(options)
