@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: cron-news
+name: cron-fetch-news
 
 on:
   workflow_dispatch:
@@ -11,15 +11,23 @@ on:
 jobs:
   cron:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+    - name: Output current branch name & date
+      # To use latest action, specify "release-master" instead of "v0.0.2"
+      uses: satackey/action-js-inline@v0.0.2
+      id: getdata
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: node '../../cron/fetch-news.js'
+        # Edit the following line to install packages required to run your script.
+        required-packages: axios
+        script: |
+          (() => {
+            console.log('fetch start')
+            fetch('http://3.35.143.195:3000/api/news')
+            console.log('fetch end')
+          })()
