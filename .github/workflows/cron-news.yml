@@ -29,5 +29,5 @@ jobs:
       - name: Fetch API Data 📦
         uses: JamesIves/fetch-api-data-action@releases/v1
         with:
-          ENDPOINT: 3.35.143.195:3000/api/news
+          ENDPOINT: http://3.35.143.195:3000/api/news
           CONFIGURATION: '{ "method": "GET" }'
